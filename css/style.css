@@ -23,6 +23,7 @@ body {
 
 .item {
    top: 0px;
+   box-shadow: 0px 4px 0px #2edb82;
    height: 64px;
    width: 76px;
    margin-top: 10px;
@@ -38,6 +39,26 @@ body {
    color: white;
 }
 
+.item:active {
+   top: 2px;
+   box-shadow: 0px 2px 0px #00823f;
+}
+
+#screen {
+   flex: 100%;
+   margin: 0;
+   padding-right: 7px;
+   height: 40px;
+   color: rgb(80, 211, 48);
+   background: #253340;
+   border: 1px grey solid;
+   border-radius: 3px;
+   line-height: 40px;
+   font-size: 1.2em;
+   text-align: right;
+   font-weight: 600;
+   letter-spacing: 0.02em;
+}
 
 #delete {
    font-size: 1em;
