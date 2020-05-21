@@ -3,20 +3,20 @@
 var keyValue,
    cal = ''
 
-var displayMath = function (cal) {
+const displayMath = function (cal) {
    var el = document.getElementById('screen')
    el.style.color = '#50d330';
    el.textContent = cal
 }
 
-var displayWarning = function (exception) {
+const displayWarning = function (exception) {
    var el = document.getElementById('screen')
    el.append(' Formato Inválido')
    el.style.color = '#ff1515';
    console.log('Exception thrown: ' + exception)
 }
 
-var eventsMath = function (e) {
+const eventsCalc = function (e) {
    keyValue = e.target.textContent
    if (keyValue === 'Limpiar') {
       cal = ''
@@ -38,15 +38,12 @@ var eventsMath = function (e) {
    }
 }
 
-const items = document.getElementsByClassName('item')
+const init = function () {
+   var items = document.getElementsByClassName('item')
 
-console.log(items.length)
+   for (const item of items) {
+      item.addEventListener('click', eventsCalc)
+   }
+}
 
-
-// for (var i = 0; i < items.length; i++) {
-//    console.log(i)
-//    // items[i].addEventListener('click', eventsMath)
-// }
-// items.forEach(elem => {
-//    elem.addEventListener('click', eventsMath)
-// });
+init()
